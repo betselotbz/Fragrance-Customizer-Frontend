@@ -3,8 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
-  templateUrl: './carousel/carousel.component.html',
-  styleUrls: ['./carousel/carousel.component.css'],
- 
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent {}
