@@ -1,0 +1,27 @@
+/* styles.css */
+
+/* Apply styles to the navbar */
+.navbar {
+    background-color: #ba7d7d5f; /* Set the background color */
+    padding: 20px; /* Add some padding */
+  }
+  
+  /* Style the logo */
+  .logo {
+    height: 30px; /* Set the height of the logo */
+    margin-right: 10px; /* Add some margin to the right */
+  }
+  
+  /* Style the navbar links */
+  .navbar-brand,
+  .nav-link {
+    color: #007bff; /* Set the text color */
+    margin-right: 20px; /* Add margin to the right of each link */
+    text-decoration: none; /* Remove the default underline */
+  }
+  
+  /* Style the active link */
+  .nav-item.active .nav-link {
+    font-weight: bold; /* Make the active link bold */
+  }
+  
