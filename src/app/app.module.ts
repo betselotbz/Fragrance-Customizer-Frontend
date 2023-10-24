@@ -8,7 +8,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CarouselComponent } from './homepage/carousel/carousel.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { PerfumeComponent } from './perfume/perfume.component'; 
-
+import { AppRoutingModule } from './app.routing.module';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { PerfumeComponent } from './perfume/perfume.component';
   imports: [
     BrowserModule,
     CarouselComponent,
-    NgbModule
+    NgbModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
