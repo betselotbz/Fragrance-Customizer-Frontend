@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './homepage/navbar/navbar.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { CarouselComponent } from './homepage/carousel/carousel.component';
 
 
 
@@ -10,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   declarations: [
     AppComponent,
     NavbarComponent,
+    HomepageComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule
