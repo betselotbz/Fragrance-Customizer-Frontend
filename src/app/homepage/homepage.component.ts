@@ -1,10 +1,10 @@
+// homepage/homepage.component.ts
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  templateUrl: './carousel/carousel.component.html',
+  styleUrls: ['./carousel/carousel.component.css'],
+ 
 })
-export class HomepageComponent {
-
-}
+export class HomepageComponent {}

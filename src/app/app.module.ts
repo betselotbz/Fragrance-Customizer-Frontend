@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './homepage/navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { CarouselComponent } from './homepage/carousel/carousel.component';
+import { CarouselComponent } from './shared/carousel/carousel.component'; 
 
 
 
@@ -13,10 +14,11 @@ import { CarouselComponent } from './homepage/carousel/carousel.component';
     AppComponent,
     NavbarComponent,
     HomepageComponent,
-    CarouselComponent,
+    CarouselComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
