@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CarouselComponent } from './homepage/carousel/carousel.component';
-import { FooterComponent } from './shared/footer/footer.component'; 
+import { FooterComponent } from './shared/footer/footer.component';
+import { PerfumeComponent } from './perfume/perfume.component'; 
 
 
 
@@ -15,7 +16,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     AppComponent,
     NavbarComponent,
     HomepageComponent,
-    FooterComponent, 
+    FooterComponent,
+    PerfumeComponent, 
   ],
   imports: [
     BrowserModule,
