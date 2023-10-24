@@ -2,7 +2,7 @@
 
 /* Apply styles to the navbar */
 .navbar {
-    background-color: #ba7d7d5f; /* Set the background color */
+  background-color: #e6c7c7 !important;
     padding: 20px; /* Add some padding */
   }
   
@@ -15,7 +15,7 @@
   /* Style the navbar links */
   .navbar-brand,
   .nav-link {
-    color: #007bff; /* Set the text color */
+    color: black; /* Set the text color */
     margin-right: 20px; /* Add margin to the right of each link */
     text-decoration: none; /* Remove the default underline */
   }
