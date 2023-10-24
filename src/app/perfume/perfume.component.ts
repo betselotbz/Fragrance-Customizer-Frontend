@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./perfume.component.css']
 })
 export class PerfumeComponent {
-
+  perfumes: any[] = [];
 }
