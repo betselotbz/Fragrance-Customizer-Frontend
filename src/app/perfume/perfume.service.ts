@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PerfumeService {
-  private apiUrl = 'http://localhost:9092/'; // Update with your actual backend URL
+  private apiUrl = 'http://localhost:9092/'; // Backend URL
 
   constructor(private http: HttpClient) {}
 
