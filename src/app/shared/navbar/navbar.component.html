@@ -19,7 +19,8 @@
               <a routerLink="/cart" class="nav-link">Cart</a>
           </li>
           <li class="nav-item">
-              <a routerLink="/login" class="nav-link">Login</a>
+              <a routerLink="/login" class="nav-link" *ngIf="!isLoggedIn">Login</a>
+              <a (click)="onClickLogout()" routerLink="/login" class="nav-link" *ngIf="isLoggedIn">Logout</a>
           </li>
       </ul>
   </div>
