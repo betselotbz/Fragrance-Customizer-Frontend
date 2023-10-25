@@ -1,0 +1,20 @@
+<p>custom works!</p>
+
+<div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 mb-3" *ngFor="let custom of customs">
+        <div class="card">
+          <img src="{{custom.image}}" class="card-img-top" alt="Perfume Image">
+          <div class="card-body">
+            <h5 class="card-title">{{custom.name}}</h5>
+            <p class="card-text">{{custom.description}}</p>
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
