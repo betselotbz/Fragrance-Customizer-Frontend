@@ -1,22 +1,21 @@
 /* app/footer/footer.component.css */
 
 .footer-box {
-    background-color: #333;
+    background-color: #2b0707;
     color: white; /* Change text color to make it visible on a dark background */
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     padding: 10px;
     text-align: center;
   }
-  
+
   /* Style the links in the footer */
   .footer-box a {
     color: white;
     text-decoration: none;
   }
-  
+
   .footer-box a:hover {
     text-decoration: underline;
   }
-  
