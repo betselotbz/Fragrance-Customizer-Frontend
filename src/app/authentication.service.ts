@@ -1,21 +1,43 @@
+// authentication.service.ts
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {BehaviorSubject, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
-  private authToken: string | null = null;
+export class AuthenticationService {
+  private apiUrl = 'http://localhost:9092'; // Adjust the URL based on your backend API
 
-  setAuthToken(token: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'): void {
-    this.authToken = token;
-    // You may want to save the token to local storage for persistence
+  constructor(private http: HttpClient) {}
+
+  login(emailAddress: string, password: string): Observable<any> {
+    const loginData = { emailAddress, password };
+    return this.http.post(`${this.apiUrl}/auth/users/login/`, loginData);
+    // Assuming your backend API has an endpoint for login, adjust the URL accordingly
+  }
+
+  setAuthToken(token: string): void {
+    // Save the token to local storage for persistence
     localStorage.setItem('authToken', token);
   }
 
   getAuthToken(): string | null {
-
-    return this.authToken || localStorage.getItem('authToken');
+    return localStorage.getItem('authToken');
+  }
+  removeToken(){
+    return localStorage.removeItem('authToken')
   }
 
-  // Below I can Add methods for login, logout, etc.
+  private userLoggedInSubject = new BehaviorSubject<boolean>(false);
+  userLoggedIn$ = this.userLoggedInSubject.asObservable();
+
+  setUserLoggedIn(value: boolean) {
+    this.userLoggedInSubject.next(value);
+  }
+
+  isUserLoggedIn(): boolean {
+    return this.userLoggedInSubject.value;
+  }
 }
+
