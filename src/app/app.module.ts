@@ -7,8 +7,14 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CarouselComponent } from './homepage/carousel/carousel.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { PerfumeComponent } from './perfume/perfume.component'; 
+import { PerfumeComponent } from './perfume/perfume.component';
 import { AppRoutingModule } from './app.routing.module';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
+import {CartComponent} from "./cart/cart.component";
+import {LoginComponent} from "./login/login.component";
+import { FormsModule } from '@angular/forms';
+import {CustomComponent} from "./custom/custom.component";
 
 
 @NgModule({
@@ -17,15 +23,24 @@ import { AppRoutingModule } from './app.routing.module';
     NavbarComponent,
     HomepageComponent,
     FooterComponent,
-    PerfumeComponent, 
+    PerfumeComponent,
+    CartComponent,
+    LoginComponent,
+    CustomComponent,
   ],
   imports: [
     BrowserModule,
     CarouselComponent,
     NgbModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

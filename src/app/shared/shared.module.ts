@@ -1,4 +1,4 @@
-// shared/shared.module.ts
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from '../homepage/carousel/carousel.component';
