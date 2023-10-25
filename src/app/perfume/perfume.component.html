@@ -1,18 +1,19 @@
-<p>perfume works!</p>
-<!-- perfume.component.html -->
+
+<div>
+
 <div class="container">
   <div class="row">
-    <!-- Repeat this block for each perfume -->
-    <div class="col-md-3 mb-3">
+    <div class="col-md-3 mb-3" *ngFor="let perfume of perfumes">
       <div class="card">
-        <img src="perfume-image.jpg" class="card-img-top" alt="Perfume Image">
+        <img src="{{perfume.image}}" class="card-img-top" alt="Perfume Image">
         <div class="card-body">
-          <h5 class="card-title">Perfume Name</h5>
-          <p class="card-text">Perfume description goes here.</p>
+          <h5 class="card-title">{{perfume.name}}</h5>
+          <p class="card-text">{{perfume.description}}</p>
           <a href="#" class="btn btn-primary">Add to Cart</a>
         </div>
       </div>
     </div>
-    <!-- Repeat this block for each perfume -->
   </div>
+</div>
+
 </div>
