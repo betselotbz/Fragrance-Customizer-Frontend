@@ -12,6 +12,18 @@ export class PerfumeService {
   constructor(private http: HttpClient) {}
 
   getPerfumes(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}api/perfumes`);
+    const res = this.http.get<any[]>(`${this.apiUrl}api/perfumes/`);
+    console.log(res)
+    return res
   }
+  getPerfumesByFamily(family: string): Observable<any[]> {
+    const url = `${this.apiUrl}api/perfumes/family/${family}`;
+    return this.http.get<any[]>(url);
+  }
+
+  getPerfumeById(id: number): Observable<any> {
+    const url = `${this.apiUrl}api/perfumes/${id}`;
+    return this.http.get<any>(url);
+  }
+
 }
