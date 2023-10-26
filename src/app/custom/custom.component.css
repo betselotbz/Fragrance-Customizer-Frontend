@@ -1,0 +1,17 @@
+
+.container{
+  padding: 20px;
+}
+.card {
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align text content */
+}
+
+.btn-primary {
+  margin-top: auto; /* Align the "Add to Cart" button at the bottom */
+}
