@@ -1,4 +1,3 @@
-//perfume service
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -11,7 +10,10 @@ export class CustomService {
 
   constructor(private http: HttpClient) {}
 
-  getPerfumes(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}api/custom-fragrance`);
+  getCustomFragrance(): Observable<any[]> {
+    const res = this.http.get<any[]>(`${this.apiUrl}api/custom-fragrance/`);
+    console.log(res);
+    return res;
   }
 }
+
