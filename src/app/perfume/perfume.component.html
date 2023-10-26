@@ -1,19 +1,25 @@
+<div class="filter-buttons">
+  <button (click)="filterByFamily('all')">All</button>
+  <button (click)="filterByFamily('Aquatic')">Fresh</button>
+  <button (click)="filterByFamily('Oriental')">Oriental</button>
+  <button (click)="filterByFamily('Floral')">Floral</button>
+  <button (click)="filterByFamily('Woody')">Woody</button>
+  <button (click)="filterByFamily('Sweet')">Sweet</button>
+</div>
 
-<div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-3 mb-3" *ngFor="let perfume of perfumes">
-      <div class="card">
+    <div class="col-md-3 mb-3" *ngFor="let perfume of displayedPerfumes">
+      <div class="card" style="height: 100%;">
         <img src="{{perfume.image}}" class="card-img-top" alt="Perfume Image">
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{perfume.name}}</h5>
-          <p class="card-text">{{perfume.description}}</p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
+          <p class="card-text flex-grow-1">{{perfume.notes}}</p>
+          <a href="#" class="btn btn-primary mt-auto">Add to Cart</a>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-</div>
