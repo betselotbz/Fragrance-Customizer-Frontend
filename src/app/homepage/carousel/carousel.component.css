@@ -1,8 +1,25 @@
 img {
-    width: 542px;
-    height: 624px;
-  }
-  ngb-carousel {
-    width: 800px;
-    margin: 0 auto;
-  }
+  width: 542px;
+  height: 624px;
+}
+ngb-carousel {
+  width: 800px;
+  margin: 0 auto;
+}
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 50px;
+}
+
+
+
+.picsum-img-wrapper {
+  text-align: center;
+}
+
+.carousel-caption {
+  text-align: center;
+}
