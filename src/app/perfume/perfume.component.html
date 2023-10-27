@@ -16,7 +16,7 @@
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{perfume.name}}</h5>
           <p class="card-text flex-grow-1">{{perfume.notes}}</p>
-          <a href="#" class="btn btn-primary mt-auto">Add to Cart</a>
+          <a (click)="onClickAddToCart(perfume)" class="btn btn-primary mt-auto">Add to Cart</a>
         </div>
       </div>
     </div>
