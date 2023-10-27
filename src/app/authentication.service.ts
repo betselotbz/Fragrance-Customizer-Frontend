@@ -1,43 +1,69 @@
 // authentication.service.ts
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
+import {User} from "./shared/models";
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class AuthenticationService {
-  private apiUrl = 'http://localhost:9092'; // Adjust the URL based on your backend API
+    private apiUrl = 'http://localhost:9092';
 
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {
+    }
 
-  login(emailAddress: string, password: string): Observable<any> {
-    const loginData = { emailAddress, password };
-    return this.http.post(`${this.apiUrl}/auth/users/login/`, loginData);
-    // Assuming your backend API has an endpoint for login, adjust the URL accordingly
-  }
+    getCurrentUser(): Observable<any> {
+        return this.http.get(`${this.apiUrl}/auth/users/currentUser/`);
 
-  setAuthToken(token: string): void {
-    // Save the token to local storage for persistence
-    localStorage.setItem('authToken', token);
-  }
+    }
 
-  getAuthToken(): string | null {
-    return localStorage.getItem('authToken');
-  }
-  removeToken(){
-    return localStorage.removeItem('authToken')
-  }
+    login(emailAddress: string, password: string): Observable<any> {
+        const loginData = {emailAddress, password};
+        return this.http.post(`${this.apiUrl}/auth/users/login/`, loginData);
 
-  private userLoggedInSubject = new BehaviorSubject<boolean>(false);
-  userLoggedIn$ = this.userLoggedInSubject.asObservable();
+    }
 
-  setUserLoggedIn(value: boolean) {
-    this.userLoggedInSubject.next(value);
-  }
+    register(name: string, emailAddress: string, password: string): Observable<any> {
+        const registerData = {name, emailAddress, password};
+        return this.http.post(`${this.apiUrl}/auth/users/register/`, registerData);
 
-  isUserLoggedIn(): boolean {
-    return this.userLoggedInSubject.value;
-  }
+    }
+
+    setAuthToken(token: string): void {
+        // Save the token to local storage for persistence
+        localStorage.setItem('authToken', token);
+    }
+
+    getAuthToken(): string | null {
+        return localStorage.getItem('authToken');
+    }
+
+    removeToken() {
+        return localStorage.removeItem('authToken')
+    }
+
+    private userLoggedInSubject = new BehaviorSubject<boolean>(false);
+    userLoggedIn$ = this.userLoggedInSubject.asObservable();
+
+
+    setUserLoggedIn(value: boolean) {
+        this.userLoggedInSubject.next(value);
+    }
+
+    isUserLoggedIn(): boolean {
+        return this.userLoggedInSubject.value;
+    }
+
+    private loggedInSubject = new BehaviorSubject<User>({});
+    loggedIn$ = this.loggedInSubject.asObservable();
+
+    setLoggedInUser(user: User) {
+        this.loggedInSubject.next(user)
+    }
+
+    getLoggedInUser(user: User) {
+        this.loggedInSubject.value
+    }
 }
 
