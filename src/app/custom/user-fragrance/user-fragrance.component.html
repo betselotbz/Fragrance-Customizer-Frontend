@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <div class="mb-3">
+    <label for="customName" class="form-label">Name</label>
+    <input [(ngModel)]="name" type="text" class="form-control" id="customName" placeholder="my custom fragment">
+  </div>
+
+  <div *ngFor="let ingredient of ingredients" class="row mb-3">
+    <div class="col-2">
+      <div class="border p-5">
+        <img class="card-img" [src]="ingredient.image" alt="{{ ingredient.name }} slide" />
+      </div>
+    </div>
+    <div class="col-2 d-flex align-items-center">
+      {{ingredient.name}}
+    </div>
+  </div>
+
+
+  <a (click)="onButtonClick()" class="btn btn-primary">Create custom fragrance</a>
+
+</div>
